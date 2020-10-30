@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Done!</string>
+    <string name="add_btn_text">+</string>
+    <string name="home_title_text">DONE!</string>
+    <string name="add_a_task_title_text">Add a Task</string>
+    <string name="task_name_input_hint">Task\'s name</string>
+    <string name="add_task_switch_text">Urgent</string>
+    <string name="add_task_add_btn_text">Add it!</string>
+</resources>
