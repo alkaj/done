@@ -6,7 +6,7 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class DoneItemsAdapter(private val itemsList: ArrayList<String>):
+class DoneItemsAdapter(private val itemsList: ArrayList<DoneItem>):
     RecyclerView.Adapter<DoneItemsAdapter.ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val linearLayout = LayoutInflater
@@ -18,7 +18,11 @@ class DoneItemsAdapter(private val itemsList: ArrayList<String>):
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val main = holder.todoItemView
         val name = main.getChildAt(0) as TextView
-        name.text = itemsList[position]
+        name.text = itemsList[position].name
+
+        val urgent = itemsList[position].priority
+        val priority = main.getChildAt(1) as TextView
+        priority.text = if (urgent) "!!" else ""
     }
 
     override fun getItemCount(): Int {

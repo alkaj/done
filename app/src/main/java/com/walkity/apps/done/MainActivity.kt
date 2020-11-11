@@ -13,17 +13,18 @@ class MainActivity : AppCompatActivity() {
     lateinit var doneItemsAdapter: DoneItemsAdapter
     lateinit var recyclerLayoutManager: RecyclerView.LayoutManager
 
-    var list: ArrayList<String> = ArrayList<String>()
+    var list: ArrayList<DoneItem> = ArrayList<DoneItem>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        list.add("Vider la poubelle")
-        list.add("Laver les habits")
-        list.add("Gerer la journee 3")
-        list.add("Faire la partie CSS3")
-        list.add("Preparer la partie Javascript")
+        list.add(DoneItem("Prepa GDE", true))
+        list.add(DoneItem("Vider la poubelle"))
+        list.add(DoneItem("Laver les habits", true))
+        list.add(DoneItem("Gerer la journee 3", true))
+        list.add(DoneItem("Faire la partie CSS3"))
+        list.add(DoneItem("Preparer la partie Javascript", true))
 
         doneItemsList = findViewById(R.id.todo_list)
         recyclerLayoutManager = LinearLayoutManager(this)
